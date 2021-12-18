@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api/user")
@@ -18,6 +19,11 @@ public class UserController {
     @GetMapping("/all")
     public List<User> Listar() {
         return servicio.listar();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<User> getUser(@PathVariable("id") int id){
+        return servicio.getUser(id);
     }
 
     @GetMapping("/emailexist/{email}")

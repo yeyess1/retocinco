@@ -9,6 +9,8 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 @Repository
 public class OrderRepository {
@@ -51,7 +53,7 @@ public class OrderRepository {
         try {
             return orderCrudRepository.findByRegisterDayAndSalesManId(new SimpleDateFormat("yyyy-MM-dd").parse(registerDay), id);
         } catch (ParseException e) {
-            //Logger.getLogger(OrderRepository.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(OrderRepository.class.getName()).log(Level.SEVERE, null, e);//pilas este es el que estaba comentado, ojo con la variable e
             e.printStackTrace();
             return null;
         }
