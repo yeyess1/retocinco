@@ -43,5 +43,15 @@ public class CosmeticController {
     public boolean delete(@PathVariable("reference") String reference){
         return cosmeticServices.delete(reference);
     }
+
+    @GetMapping("/price/{price}")
+    public List<Cosmetic> getByPrice(@PathVariable("price") double price){
+        return cosmeticServices.getByPrice(price);
+    }
+
+    @GetMapping("/description/{description}")
+    public List<Cosmetic> getByDescriptionContains(@PathVariable("description") String description){
+        return cosmeticServices.getByDescriptionContains(description);
+    }
 }
 

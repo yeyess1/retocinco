@@ -81,5 +81,13 @@ public class CosmeticService {
         return aBoolean;
     }
 
+    public List<Cosmetic> getByPrice(double price){
+        return cosmeticCrudRepository.getByPrice(price);
+    }
+
+    public List<Cosmetic> getByDescriptionContains(String description){
+        return cosmeticCrudRepository.getByDescriptionContains(description);
+    }
+
 }
 

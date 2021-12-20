@@ -109,4 +109,8 @@ public class UserService {
         }).orElse(false);
         return aBoolean;
     }
+
+    public List<User> getByMonthBirthDay(String month){
+        return repository.getByMonthBirthDay(month);
+    }
 }

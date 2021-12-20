@@ -35,5 +35,12 @@ public class CosmeticRepository {
     public void delete(Cosmetic clothe){
         cosmeticCrudRepository.delete(clothe);
     }
+    public List<Cosmetic> getByPrice(double price){
+        return cosmeticCrudRepository.findByPrice(price);
+    }
+
+    public List<Cosmetic> getByDescriptionContains(String description){
+        return cosmeticCrudRepository.findByDescriptionContainingIgnoreCase(description);
+    }
 }
 
